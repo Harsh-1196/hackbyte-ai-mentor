@@ -6,21 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { LeetCodeQuestion } from '@/utils/csv-loader';  // Fixed import path
 
 interface QuestionDisplayProps {
-  question: {
-    _id: string;
-    qid: number;
-    title: string;
-    title_slug: string;
-    difficulty: string;
-    acceptance_rate: number;
-    paid_only: boolean;
-    topic_tags: string[];
-    category_slug: string;
-    question_body: string;
-    examples: Array<{ input: string; output: string; explanation: string }> | string | string[];
-    constraints: string | string[];
-    Companies?: string; // Added Companies field to match LeetCodeQuestion interface
-  };
+  question: LeetCodeQuestion | any;
 }
 
 export function QuestionDisplay({ question }: QuestionDisplayProps) {

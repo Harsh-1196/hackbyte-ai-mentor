@@ -2,7 +2,8 @@ import clientPromise from '@/lib/database/mongodb';
 import { NextResponse } from 'next/server';
 
 export async function GET(
-  request: Request
+  request: Request,
+  context: { params: Promise<{ qid: string }> }
 ): Promise<NextResponse> {
   try {
     const client = await clientPromise;
@@ -25,7 +26,8 @@ export async function GET(
     }
 
     // Otherwise, proceed with qid-based lookup
-    const questionId = parseInt(params.qid);
+    const { qid } = await context.params;
+    const questionId = parseInt(qid);
 
     console.log(`API: Attempting to fetch question with ID ${questionId}`);
 

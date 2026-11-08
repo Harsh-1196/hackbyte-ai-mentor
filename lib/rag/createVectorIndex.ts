@@ -28,17 +28,17 @@ export async function createVectorSearchIndex() {
 
   try {
     // Create the search index
-    const result = await vectorCollection.createSearchIndex(index);
+    const result = await (vectorCollection as any).createSearchIndex(index);
     console.log(`New search index named ${result} is building.`);
 
     // Wait for the index to be ready to query
     console.log("Polling to check if the index is ready. This may take up to a minute.");
     let isQueryable = false;
     while (!isQueryable) {
-      const cursor = vectorCollection.listSearchIndexes();
+      const cursor = (vectorCollection as any).listSearchIndexes();
       for await (const idx of cursor) {
         if (idx.name === result) {
-          if (idx.queryable) {
+          if ((idx as any).queryable) {
             console.log(`${result} is ready for querying.`);
             isQueryable = true;
           } else {

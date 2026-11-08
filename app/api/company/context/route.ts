@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { searchCompanyVectors, getCompanyIfExists } from '@/lib/rag/queryEngine';
-import { queryLLM } from '@/lib/ai/gemini';
-import { ObjectId } from 'mongodb';
+import { getCompanyIfExists, searchCompanyVectors } from '@/lib/rag/queryEngine';
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    const body = await req.json();
-    const { companyName, query } = body;
+    const { companyName, query } = await request.json();
     
+    // Validate inputs
     if (!companyName) {
       return NextResponse.json(
         { message: 'Company name is required' },
@@ -25,7 +23,7 @@ export async function POST(req: NextRequest) {
     // Get company ID from company name
     const { exists, companyId } = await getCompanyIfExists(companyName);
     
-    if (!exists) {
+    if (!exists || !companyId) {
       return NextResponse.json(
         { message: `Company "${companyName}" not found` },
         { status: 404 }

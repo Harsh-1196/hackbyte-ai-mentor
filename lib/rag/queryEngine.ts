@@ -35,7 +35,7 @@ export async function ensureCompanyWithEmbeddings(companyName: string, additiona
   // Check if company already exists
   const { exists, companyId, company } = await getCompanyIfExists(companyName);
   
-  if (exists && company.processedContent && company.processedContent.length > 0) {
+  if (exists && companyId && company && company.processedContent && company.processedContent.length > 0) {
     const db = await getMongoDb();
     const vectorCollection = db.collection('vector_embeddings');
     
@@ -60,6 +60,9 @@ export async function ensureCompanyWithEmbeddings(companyName: string, additiona
   const result = await processCompanySearch(companyName, additionalInfo);
   if (result.isNew) {
     const newCompany = await companiesCollection.findOne({ companyName });
+    if (!newCompany) {
+      throw new Error(`Failed to retrieve information about ${companyName}.`);
+    }
     return newCompany._id;
   } else {
     throw new Error(`Failed to retrieve information about ${companyName}.`);
@@ -74,10 +77,10 @@ export async function searchCompanyVectors(companyId: ObjectId, userQuery: strin
   sources: { title: string; url: string }[];
 }> {
   const db = await getMongoDb();
-  const companiesCollection = db.collection('companies');
   const vectorCollection = db.collection('vector_embeddings');
+  const companiesCollection = db.collection('companies');
   
-  // Debug: Check if there are any vector embeddings for this company
+  // Check if we have vectors for this company
   const vectorDocs = await vectorCollection.find({ 
     "metadata.companyId": companyId.toString() 
   }).toArray();
@@ -88,9 +91,9 @@ export async function searchCompanyVectors(companyId: ObjectId, userQuery: strin
   const company = await companiesCollection.findOne({ _id: companyId });
   
   // Try vector search with rate limit handling
-  let vectorSearchResults = [];
-  let context;
-  let sources;
+  let vectorSearchResults: any[] = [];
+  let context: string = "";
+  let sources: { title: string; url: string }[] = [];
   
   try {
     // Generate embedding for the query with retry logic
@@ -169,8 +172,8 @@ export async function searchCompanyVectors(companyId: ObjectId, userQuery: strin
   if (!vectorSearchResults || vectorSearchResults.length === 0) {
     console.log(`No vector documents for company ID ${companyId}. Using all processed content as context.`);
     if (company && company.processedContent && company.processedContent.length > 0) {
-      context = company.processedContent.map(item => item.content).join("\n\n");
-      sources = company.processedContent.map(item => ({
+      context = company.processedContent.map((item: any) => item.content).join("\n\n");
+      sources = company.processedContent.map((item: any) => ({
         title: item.title,
         url: item.url
       }));
@@ -181,10 +184,10 @@ export async function searchCompanyVectors(companyId: ObjectId, userQuery: strin
     }
   } else {
     // Combine all the relevant chunks
-    context = vectorSearchResults.map(r => r.text).join("\n\n");
-    sources = vectorSearchResults.map(r => ({
-      title: r.metadata.title,
-      url: r.metadata.url
+    context = vectorSearchResults.map((r: any) => r.text).join("\n\n");
+    sources = vectorSearchResults.map((r: any) => ({
+      title: r.metadata?.title || '',
+      url: r.metadata?.url || ''
     }));
   }
   
@@ -205,7 +208,7 @@ export async function queryCompany(companyName: string, userQuery: string, addit
     sources,
     companyId: companyId.toString(),
     context
-  }
+  };
 }
 
 /**
@@ -219,9 +222,9 @@ async function generateQueryEmbedding(query: string, maxRetries = 3): Promise<nu
     try {
       const [embedding] = await generateEmbeddings([query]);
       return embedding;
-    } catch (error) {
+    } catch (error: any) {
       retryCount++;
-      console.log(`Embedding generation failed (attempt ${retryCount}/${maxRetries}). ${error.message}`);
+      console.log(`Embedding generation failed (attempt ${retryCount}/${maxRetries}). ${error?.message || String(error)}`);
       
       // If we've reached max retries, return null to trigger fallback
       if (retryCount >= maxRetries) {
@@ -242,9 +245,9 @@ async function generateQueryEmbedding(query: string, maxRetries = 3): Promise<nu
 /**
  * Ensure required collections exist
  */
-async function ensureCollections(db) {
+async function ensureCollections(db: any) {
   const collections = await db.listCollections().toArray();
-  const collectionNames = collections.map(c => c.name);
+  const collectionNames = collections.map((c: any) => c.name);
   console.log("Collections in database:", collectionNames);
   
   if (!collectionNames.includes('companies')) {

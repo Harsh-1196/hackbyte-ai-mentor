@@ -1,8 +1,3 @@
-import { cppTemplate } from "@/components/dsa-template/templates/language_templates";
-import { addTwoNumbersTemplate } from "@/components/dsa-template/templates/add_two_numbers_template";
-import { longestSubstringTemplate } from "@/components/dsa-template/templates/longest_substring_template";
-import { medianTwoArraysTemplate } from "@/components/dsa-template/templates/median_two_arrays_template";
-import { longestPalindromeTemplate } from "@/components/dsa-template/templates/longest_palindrome_template";
 import { getTemplate } from './template-manager';
 
 // Updated language codes to match the ones used in page.tsx
@@ -11,9 +6,7 @@ const languageCodeMap = {
     python: 71,
     javascript: 63,
     java: 62
-}
-
-// Import language templates
+};
 
 // Constants for API configuration
 const JUDGE0_API_HOST = 'judge0-ce.p.rapidapi.com';
@@ -30,7 +23,7 @@ const getApiHeaders = () => ({
 });
 
 // get a submission
-async function getSubmission(tokenId, callback) {
+export async function getSubmission(tokenId: string, callback?: (data: any) => void) {
     const url = `https://judge0-ce.p.rapidapi.com/submissions/${tokenId}?base64_encoded=true&fields=*`;
     const options = {
         method: 'GET',
@@ -44,23 +37,23 @@ async function getSubmission(tokenId, callback) {
         if (!response.ok) {
             const errorText = await response.text();
             if (callback) {
-                callback({apiStatus: 'error', message: `API error: ${response.status} ${response.statusText}`})
+                callback({apiStatus: 'error', message: `API error: ${response.status} ${response.statusText}`});
             }
             return { error: `API error: ${response.status} ${response.statusText}`, message: errorText };
         }
         
         const result = await response.json();
         return result;
-    } catch (error) {
+    } catch (error: any) {
         if (callback) {
-            callback({apiStatus: 'error', message: JSON.stringify(error)})
+            callback({apiStatus: 'error', message: JSON.stringify(error)});
         }
-        return { error: true, message: error.toString() };
+        return { error: true, message: String(error) };
     }
 }
 
 // Helper function to safely decode base64 strings
-const safeAtob = (base64String) => {
+export const safeAtob = (base64String: string) => {
     if (!base64String) return '';
     try {
         return atob(base64String);
@@ -71,7 +64,7 @@ const safeAtob = (base64String) => {
 };
 
 // Helper function to safely encode strings to base64
-const safeEncode = (text) => {
+export const safeEncode = (text: string) => {
     if (!text) return null;
     try {
         return btoa(unescape(encodeURIComponent(text)));

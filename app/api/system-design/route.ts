@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
     // Generate diagram using Vercel AI SDK
     try {
       const { object: diagramData } = await generateObject({
-        model: google('gemini-1.5-pro', {
+        model: google('gemini-2.5-flash', {
           structuredOutputs: false,
         }),
         schema: DiagramSchema,

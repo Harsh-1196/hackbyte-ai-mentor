@@ -1,19 +1,12 @@
-import { ensureCompanyWithEmbeddings, searchCompanyVectors, queryCompany, getCompanyIfExists } from '@/lib/rag/queryEngine';
-import { queryLLM } from '@/lib/ai/gemini';
 import { NextRequest, NextResponse } from 'next/server';
-import { ObjectId } from 'mongodb';
+import { queryCompany, getCompanyIfExists, searchCompanyVectors } from '@/lib/rag/queryEngine';
+import { queryLLM } from '@/lib/ai/gemini';
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    const body = await req.json();
-    const { 
-      companyName, 
-      query, 
-      type = 'custom', 
-      additionalInfo = '', 
-      mode = 'existing'
-    } = body;
+    const { companyName, query, additionalInfo, mode = 'existing' } = await request.json();
     
+    // Validate inputs
     if (!companyName) {
       return NextResponse.json(
         { message: 'Company name is required' },
@@ -37,7 +30,7 @@ export async function POST(req: NextRequest) {
       // For existing companies, use the lookup flow
       const { exists, companyId } = await getCompanyIfExists(companyName);
       
-      if (!exists) {
+      if (!exists || !companyId) {
         // If company doesn't exist but we're in existing mode, try to create it
         console.log(`Company "${companyName}" not found, attempting to create...`);
         const result = await queryCompany(companyName, query, additionalInfo);

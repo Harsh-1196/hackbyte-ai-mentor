@@ -73,11 +73,11 @@ export async function createVectorStore(companyId: ObjectId, processedContent: P
 /**
  * Ensure vector search index exists
  */
-async function ensureVectorIndex(db, dimension: number): Promise<void> {
+async function ensureVectorIndex(db: any, dimension: number): Promise<void> {
   try {
     const vectorCollection = db.collection('vector_embeddings');
     const indexes = await vectorCollection.listIndexes().toArray();
-    const hasVectorIndex = indexes.some(index => index.name === "vector_index");
+    const hasVectorIndex = indexes.some((index: any) => index.name === "vector_index");
     
     if (!hasVectorIndex) {
       await db.command({

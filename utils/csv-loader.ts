@@ -9,10 +9,10 @@ export interface LeetCodeQuestion {
   acceptance_rate: number;
   topic_tags: string[];
   question_body: string;
-  examples: string;
+  examples: any;
   constraints: string[];
   follow_up: string;
-  hints: string[];
+  hints?: string[];
   Companies: string;
 }
 
@@ -37,13 +37,13 @@ export async function loadQuestions(): Promise<LeetCodeQuestion[]> {
       from_line: 1
     });
     
-    const questions = records.map((record: any) => {
+    const questions: LeetCodeQuestion[] = records.map((record: any) => {
       try {
         // Parse topic tags
         const topic_tags = record.topic_tags ? JSON.parse(record.topic_tags.replace(/'/g, '"')) : [];
         
         // Parse examples
-        let examples = [];
+        let examples: any[] = [];
         if (record.examples) {
           try {
             examples = JSON.parse(record.examples.replace(/"<\/strong> /g, '').replace(/<\/strong>/g, ''));
@@ -54,9 +54,6 @@ export async function loadQuestions(): Promise<LeetCodeQuestion[]> {
 
         // Parse constraints
         const constraints = record.constraints ? JSON.parse(record.constraints.replace(/'/g, '"')) : [];
-        
-        // // Parse hints
-        // const hints = record.hints ? JSON.parse(record.hints.replace(/'/g, '"')) : [];
 
         return {
           id: record.id,
@@ -67,7 +64,7 @@ export async function loadQuestions(): Promise<LeetCodeQuestion[]> {
           acceptance_rate: record.acceptance_rate,
           topic_tags,
           question_body: record.question_body,
-          examples: examples.map(ex => ({ input: ex.input, output: ex.output, explanation: ex.explanation })),
+          examples: examples.map((ex: any) => ({ input: ex.input, output: ex.output, explanation: ex.explanation })),
           constraints,
           follow_up: record.follow_up,
           Companies: record.Companies || ''
@@ -77,11 +74,11 @@ export async function loadQuestions(): Promise<LeetCodeQuestion[]> {
         return null;
       }
     })
-    .filter(q => q !== null) // Remove any failed records
-    .sort((a, b) => a.qid - b.qid);
+    .filter((q: any): q is LeetCodeQuestion => q !== null)
+    .sort((a: LeetCodeQuestion, b: LeetCodeQuestion) => a.qid - b.qid);
     
     // Verify we have all expected qids
-    console.log('Loaded questions:', questions.map(q => q.qid));
+    console.log('Loaded questions:', questions.map((q: LeetCodeQuestion) => q.qid));
     return questions;
   } catch (error) {
     console.error('Error loading questions:', error);

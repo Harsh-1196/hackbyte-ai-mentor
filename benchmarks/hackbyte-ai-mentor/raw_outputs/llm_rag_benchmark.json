@@ -1,0 +1,258 @@
+{
+  "date": "2026-11-08T08:23:50.414Z",
+  "model_text": "gemini-2.5-flash",
+  "model_embedding": "gemini-embedding-001",
+  "llm_generation": {
+    "sample_size": 20,
+    "success_count": 3,
+    "success_rate_percent": 15,
+    "latencies_ms": [
+      3505.9883,
+      3430.1427000000003,
+      3094.1222
+    ],
+    "stats": {
+      "mean": 3343.417733333333,
+      "median": 3430.1427000000003,
+      "min": 3094.1222,
+      "max": 3505.9883,
+      "p95": 3505.9883
+    },
+    "cases": [
+      {
+        "id": 1,
+        "category": "dsa_explanation",
+        "query": "Explain how the Two Sum algorithm achieves O(n) time complexity using a hash map.",
+        "latency_ms": 3505.9883,
+        "char_length": 78,
+        "status": "SUCCESS"
+      },
+      {
+        "id": 2,
+        "category": "dsa_explanation",
+        "query": "What is the difference between BFS and DFS in terms of space complexity for a balanced binary tree?",
+        "latency_ms": 3430.1427000000003,
+        "char_length": 66,
+        "status": "SUCCESS"
+      },
+      {
+        "id": 3,
+        "category": "dsa_explanation",
+        "query": "How does quicksort partition work in-place, and what is its worst-case scenario?",
+        "latency_ms": 3094.1222,
+        "char_length": 91,
+        "status": "SUCCESS"
+      },
+      {
+        "id": 4,
+        "category": "dsa_explanation",
+        "query": "Explain Kadanes algorithm for finding the maximum subarray sum in O(n).",
+        "latency_ms": 447.09300000000076,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 22.927359637s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"22s\"}]"
+      },
+      {
+        "id": 5,
+        "category": "dsa_explanation",
+        "query": "How does a Trie data structure optimize prefix search compared to a hash table?",
+        "latency_ms": 462.27100000000064,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 21.858269897s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"21s\"}]"
+      },
+      {
+        "id": 6,
+        "category": "dsa_explanation",
+        "query": "Explain the Floyd cycle detection algorithm (tortoise and hare) with mathematical proof.",
+        "latency_ms": 525.8078000000005,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 20.812892447s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"20s\"}]"
+      },
+      {
+        "id": 7,
+        "category": "dsa_explanation",
+        "query": "What is the difference between Dijkstra and Bellman-Ford for negative weight cycles?",
+        "latency_ms": 439.6265000000003,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 19.663576722s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"19s\"}]"
+      },
+      {
+        "id": 8,
+        "category": "dsa_explanation",
+        "query": "How does dynamic programming with memoization differ from tabulation in stack memory usage?",
+        "latency_ms": 440.4759000000013,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 18.615074433s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"18s\"}]"
+      },
+      {
+        "id": 9,
+        "category": "dsa_explanation",
+        "query": "Explain how monotonic stack solves the Next Greater Element problem in O(n).",
+        "latency_ms": 433.63180000000284,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 17.573895836s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"17s\"}]"
+      },
+      {
+        "id": 10,
+        "category": "dsa_explanation",
+        "query": "How does the Union-Find data structure with path compression achieve near-constant time?",
+        "latency_ms": 415.58490000000165,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 16.541073637s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"16s\"}]"
+      },
+      {
+        "id": 11,
+        "category": "system_design",
+        "query": "Design a scalable rate limiter supporting 100,000 requests per second across distributed servers.",
+        "latency_ms": 448.66530000000057,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 15.491482129s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"15s\"}]"
+      },
+      {
+        "id": 12,
+        "category": "system_design",
+        "query": "How would you design a distributed URL shortening service like Bitly with high read availability?",
+        "latency_ms": 437.6490999999987,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 14.443497164s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"14s\"}]"
+      },
+      {
+        "id": 13,
+        "category": "system_design",
+        "query": "Design an idempotent payment processing workflow with stripe webhook retries.",
+        "latency_ms": 437.7368999999999,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 13.395216443s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"13s\"}]"
+      },
+      {
+        "id": 14,
+        "category": "system_design",
+        "query": "How would you design a distributed cache invalidation strategy using Redis pub/sub?",
+        "latency_ms": 450.2445000000007,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 12.337481191s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"12s\"}]"
+      },
+      {
+        "id": 15,
+        "category": "system_design",
+        "query": "Design a real-time notification service handling WebSocket connections for 1 million concurrent users.",
+        "latency_ms": 444.99089999999705,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 11.290622722s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"11s\"}]"
+      },
+      {
+        "id": 16,
+        "category": "system_design",
+        "query": "How would you partition and index a chat messaging database for group chats?",
+        "latency_ms": 422.9408000000003,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 10.245936336s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"10s\"}]"
+      },
+      {
+        "id": 17,
+        "category": "system_design",
+        "query": "Explain the trade-offs between CQRS and traditional monolithic CRUD architectures.",
+        "latency_ms": 422.5002999999997,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 9.217169981s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"9s\"}]"
+      },
+      {
+        "id": 18,
+        "category": "system_design",
+        "query": "Design an event-driven metrics ingestion pipeline using Kafka and time-series DB.",
+        "latency_ms": 434.40399999999863,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 8.17588669s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"8s\"}]"
+      },
+      {
+        "id": 19,
+        "category": "system_design",
+        "query": "How would you handle hot partitions in Apache Kafka when user IDs have severe skew?",
+        "latency_ms": 463.3731999999982,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 7.098221707s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"7s\"}]"
+      },
+      {
+        "id": 20,
+        "category": "system_design",
+        "query": "Design an image processing upload service with asynchronous thumbnail generation via S3 and SQS.",
+        "latency_ms": 422.8173999999999,
+        "status": "ERROR",
+        "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash, description: Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 6.077600337s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per minute limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"model\":\"gemini-2.5-flash\",\"location\":\"global\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"6s\"}]"
+      }
+    ]
+  },
+  "embedding": {
+    "sample_size": 20,
+    "dimensions": 3072,
+    "latencies_ms": [
+      530.0643999999993,
+      690.6580999999969,
+      552.4416999999994,
+      533.8187000000034,
+      520.3612999999968,
+      544.8785999999964,
+      523.7151999999987,
+      538.1328999999969,
+      538.5491000000038,
+      529.0391000000018,
+      534.168700000002,
+      521.8240000000005,
+      514.9864000000016,
+      491.3574000000008,
+      533.4079999999958,
+      524.9839000000065,
+      548.0723999999973,
+      532.7672999999995,
+      541.3551999999981,
+      530.1601999999984
+    ],
+    "stats": {
+      "mean": 538.7371299999998,
+      "median": 533.4079999999958,
+      "min": 491.3574000000008,
+      "max": 690.6580999999969,
+      "p95": 690.6580999999969
+    }
+  },
+  "rag_indexing": {
+    "sample_size": 10,
+    "latencies_ms": [
+      532.9087999999974,
+      526.8437000000049,
+      547.9485000000059,
+      509.33320000000094,
+      586.3559000000023,
+      513.2540000000008,
+      547.1638000000021,
+      531.5920000000042,
+      514.170100000003,
+      520.8989000000001
+    ],
+    "stats": {
+      "mean": 533.0468900000021,
+      "median": 531.5920000000042,
+      "min": 509.33320000000094,
+      "max": 586.3559000000023,
+      "p95": 586.3559000000023
+    }
+  },
+  "edge_cases": [
+    {
+      "test": "empty_prompt",
+      "status": "HANDLED",
+      "latency_ms": 15817.2762,
+      "output": "To set up `kubectl` to manage your EKS cluster created with the provided Terraform configuration, you'll primarily use the AWS CLI's `aws eks update-kubeconfig` command. This command is the easiest and most recommended way to configure your `kubeconfig` file for EKS.\n\nHere's a step-by-step guide:\n\n### Prerequisites\n\n1.  **AWS CLI:** Make sure you have the AWS CLI installed and configured with credentials that have permissions to interact with EKS (e.g., `eks:*`, `iam:ListUsers`, `sts:AssumeRole`, etc.). The user/role running `terraform apply` usually has these.\n2.  **`kubectl`:** Install `kubectl` on your machine.\n3.  **Terraform Applied:** Ensure you have successfully run `terraform apply` to create the EKS cluster.\n\n### Step 1: Add Outputs to your Terraform Configuration\n\nTo easily retrieve the cluster name after `terraform apply`, add outputs to your `outputs.tf` (or directly in your `main.tf` if you prefer):\n\n```terraform\n# outputs.tf\noutput \"eks_cluster_name\" {\n  value       = aws_eks_cluster.eks_cluster.name\n  description = \"The name of the EKS cluster.\"\n}\n\noutput \"eks_cluster_endpoint\" {\n  value       = aws_eks_cluster.eks_cluster.endpoint\n  description = \"The endpoint for the EKS cluster.\"\n}\n```\n\nAfter adding these, run `terraform apply` again (it won't make changes to the cluster, just update the state and outputs).\n\n### Step 2: Configure `kubectl` using AWS CLI\n\nNow, use the `aws eks update-kubeconfig` command. This command will:\n*   Fetch the cluster's endpoint and CA certificate.\n*   Configure the `exec` plugin for `aws-iam-authenticator` (or `eks-token`, which is the newer default) to handle authentication via AWS IAM.\n*   Add a new context to your `~/.kube/config` file (or a specified file).\n*   Set the current context to the new EKS cluster.\n\n```bash\n# 1. Get the cluster name from Terraform output\nCLUSTER_NAME=$(terraform output -raw eks_cluster_name)\n\n# 2. Define your AWS region (e.g., us-east-1, eu-west-2)\n# Make sure this matches the region where you created your EKS cluster.\nAWS_REGION=\"your-aws-region\" # <-- IMPORTANT: Replace with your actual region\n\n# 3. Update your kubeconfig\naws eks update-kubeconfig --name \"$CLUSTER_NAME\" --region \"$AWS_REGION\"\n\necho \"Kubeconfig has been updated. You can now use kubectl.\"\n```\n\n**Explanation of the command:**\n*   `--name \"$CLUSTER_NAME\"`: Specifies the name of your EKS cluster.\n*   `--region \"$AWS_REGION\"`: Specifies the AWS region where the cluster is located. This is crucial for the AWS CLI to connect to the correct EKS service endpoint and for the authentication mechanism.\n\n#### Using a Custom Kubeconfig File (Optional)\n\nIf you prefer not to modify your default `~/.kube/config` or want to manage multiple kubeconfig files, you can specify an output file:\n\n```bash\nCLUSTER_NAME=$(terraform output -raw eks_cluster_name)\nAWS_REGION=\"your-aws-region\" # <-- IMPORTANT: Replace with your actual region\nCUSTOM_KUBECONFIG_PATH=\"./eks-kubeconfig-${CLUSTER_NAME}\"\n\naws eks update-kubeconfig --name \"$CLUSTER_NAME\" --region \"$AWS_REGION\" --kubeconfig \"$CUSTOM_KUBECONFIG_PATH\"\n\necho \"Kubeconfig for ${CLUSTER_NAME} saved to ${CUSTOM_KUBECONFIG_PATH}\"\necho \"To use it, run: export KUBECONFIG=$CUSTOM_KUBECONFIG_PATH\"\necho \"Then, to revert to your default config: unset KUBECONFIG\"\n```\n\n### Step 3: Verify `kubectl` Access\n\nNow you can run `kubectl` commands to interact with your cluster:\n\n```bash\n# Check if kubectl is configured and can reach the cluster\nkubectl get svc\n\n# Get information about the cluster's nodes\nkubectl get nodes\n\n# Get current context\nkubectl config current-context\n```\n\nYou should see output listing services and nodes (initially just the control plane services, and then your worker nodes once they join). The nodes should eventually show a `Ready` status.\n\n### Important Considerations:\n\n1.  **IAM Permissions for `kubectl`:** The IAM user or role whose credentials are used by the AWS CLI (and thus `kubectl`) must be authorized to access the EKS cluster. By default, the IAM entity that *creates* the EKS cluster automatically has `system:masters` permissions via the `aws-auth` ConfigMap. If you're trying to access the cluster with a *different* IAM user/role, you'll need to explicitly add that user/role to the `aws-auth` ConfigMap within the cluster (which can be done via Terraform or `kubectl` after initial cluster setup).\n\n2.  **AWS CLI Version:** Ensure your AWS CLI is up to date, as `aws eks update-kubeconfig` is a relatively newer command.\n\nThis process simplifies `kubectl` configuration for EKS significantly by leveraging the official AWS tooling."
+    },
+    {
+      "test": "large_prompt_5kb",
+      "status": "HANDLED",
+      "latency_ms": 10192.3502,
+      "length": 4525
+    },
+    {
+      "test": "prompt_injection_safety",
+      "status": "ERROR",
+      "error": "[GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash, description: Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\nPlease retry in 23h36m10.136916701s. [{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://aistudio.google.com/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"description\":\"Generate content requests per day limit exceeded on Free Tier. See https://aistudio.google.com/docs/rate-limits.\",\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-2.5-flash\"},\"quotaValue\":\"20\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"84970s\"}]"
+    }
+  ]
+}

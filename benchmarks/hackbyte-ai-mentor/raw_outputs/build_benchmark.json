@@ -1,0 +1,13 @@
+{
+  "sample_size": 3,
+  "durations_seconds": [
+    23.324681299999998,
+    28.800632600000004,
+    39.97801139999999
+  ],
+  "mean_seconds": 30.70110843333333,
+  "median_seconds": 28.800632600000004,
+  "min_seconds": 23.324681299999998,
+  "max_seconds": 39.97801139999999,
+  "route_table": "Route (app)                                 Size  First Load JS\n┌ ○ /                                    7.82 kB         166 kB\n├ ○ /_not-found                            990 B         102 kB\n├ ƒ /api/auth/[...nextauth]                182 B         101 kB\n├ ƒ /api/code/submit                       182 B         101 kB\n├ ƒ /api/company-query                     182 B         101 kB\n├ ƒ /api/company/context                   182 B         101 kB\n├ ƒ /api/company/query                     182 B         101 kB\n├ ƒ /api/image-analysis                    182 B         101 kB\n├ ƒ /api/questions                         182 B         101 kB\n├ ƒ /api/questions/[qid]                   182 B         101 kB\n├ ƒ /api/questions/filter                  182 B         101 kB\n├ ƒ /api/sts                               182 B         101 kB\n├ ƒ /api/system-design                     182 B         101 kB\n├ ƒ /api/tts                               182 B         101 kB\n├ ○ /auth/signin                         3.01 kB         121 kB\n├ ○ /dsa-interview/onboarding              14 kB         141 kB\n├ ○ /dsa-interview/session                 27 kB         154 kB\n├ ○ /insights-view                        116 kB         230 kB\n├ ○ /mentorship                          6.36 kB         118 kB\n├ ○ /mentorship/onboarding               8.64 kB         122 kB\n├ ○ /mentorship/session                  4.74 kB         453 kB\n├ ○ /system-design                       4.45 kB         153 kB\n├ ○ /system-design/onboarding            5.19 kB         151 kB\n└ ○ /system-design/session               26.7 kB         499 kB\n+ First Load JS shared by all             101 kB"
+}

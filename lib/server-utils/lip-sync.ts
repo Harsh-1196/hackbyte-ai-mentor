@@ -9,11 +9,10 @@ import { audioFileToBase64, readJsonTranscript } from '@/utils/files';
 
 // Text to speech using Groq API
 
-
 const MAX_RETRIES = 10;
 const RETRY_DELAY = 0;
 
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const whisperTextToSpeech = async ({ text, fileName }: { text: string; fileName: string }): Promise<void> => {
   try {
@@ -27,7 +26,7 @@ const whisperTextToSpeech = async ({ text, fileName }: { text: string; fileName:
     });
 
     // Call Groq TTS API
-    const response = await groq.audio.speech.create({
+    const response = await (groq.audio.speech as any).create({
       model: "playai-tts",
       voice: "Fritz-PlayAI",
       input: text,
@@ -45,42 +44,12 @@ const whisperTextToSpeech = async ({ text, fileName }: { text: string; fileName:
   }
 };
 
-const lipSync = async ({ messages }) => {
+const lipSync = async ({ messages }: { messages: any[] }) => {
   await Promise.all(
-    messages.map(async (message, index) => {
+    messages.map(async (message: any, index: number) => {
       const fileName = `audios/message_${index}.mp3`;
-
-      // for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-      //   try {
-      //     console.log("text",message.text)
-      //     await whisperTextToSpeech({ text: message.text, fileName });
-      //     await delay(RETRY_DELAY);
-      //     break;
-      //   } catch (error) {
-      //     if (error.response && error.response.status === 429 && attempt < MAX_RETRIES - 1) {
-      //       await delay(RETRY_DELAY);
-      //     } else {
-      //       throw error;
-      //     }
-      //   }
-      // }
-      // console.log(`Message ${index} converted to speech`);
     })
   );
-
-  // await Promise.all(
-  //   messages.map(async (message, index) => {
-  //     const fileName = `audios/message_${index}.mp3`;
-
-  //     try {
-  //       await getPhonemes({ message: index });
-  //       message.audio = await audioFileToBase64({ fileName });
-  //       message.lipsync = await readJsonTranscript({ fileName: `audios/message_${index}.json` });
-  //     } catch (error) {
-  //       console.error(`Error while getting phonemes for message ${index}:`, error);
-  //     }
-  //   })
-  // );
 
   return messages;
 };

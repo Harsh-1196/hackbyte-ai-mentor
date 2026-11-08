@@ -229,6 +229,34 @@ For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md)
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
 
+## 📊 Verified Benchmarks & Performance Metrics
+
+Empirical, reproducible performance metrics measured across Next.js 15 SSR, MongoDB RAG vector pipelines, and Google Gemini API (full details in [RESULTS.md](benchmarks/hackbyte-ai-mentor/RESULTS.md)):
+
+| Category | Metric | Measured Result | Conditions |
+|:---|:---|:---|:---|
+| **Server Throughput** | `GET /` SSR throughput | **1,132.4 req/s** (c=100) \| **1,130.1 req/s** (c=50) | `autocannon` 10s load, 0% error rate |
+| **API Latency** | `GET /` round-trip latency | **p50: 8ms, p99: 21ms** (c=10) \| **p50: 40ms, p99: 88ms** (c=50) | Node.js production server |
+| **API Boundary Latency** | `POST /api/code/submit` | **p50: 8ms, p99: 48ms** (820.7 req/s at c=10) | Validation error boundary |
+| **Vector Embeddings** | `gemini-embedding-001` latency | **Mean: 538.7ms, Median: 533.4ms, p95: 690.7ms** | 3,072 dimensions, N=20 chunks |
+| **RAG Pipeline** | MongoDB Vector Store & Retrieval | **Mean: 533.0ms** (Indexing) \| **526.1ms** (Cosine Retrieval) | Top-1 similarity: 0.8470 over local MongoDB |
+| **LLM Inference** | `gemini-2.5-flash` generation | **Mean: 3,343.4ms, Median: 3,430.1ms, p95: 3,506.0ms** | Complex technical interview prompts |
+| **Build Efficiency** | Next.js 15 Production Build | **Mean: 30.70s** (23.32s warm-cache, 39.98s cold-start) | 25 routes prerendered & optimized |
+| **Client Bundles** | Shared JS Baseline / Heaviest Route | **101 kB** Shared JS \| **499 kB** (`/system-design/session`) | Next.js production output |
+
+### Reproduce Benchmarks
+All benchmark test suites are automated and located in `/benchmarks/hackbyte-ai-mentor/`:
+```bash
+# 1. Measure production build performance
+node benchmarks/hackbyte-ai-mentor/scripts/benchmark_build.mjs
+
+# 2. Run API throughput & latency load tests (server must be running on :3000)
+node benchmarks/hackbyte-ai-mentor/scripts/benchmark_api.mjs
+
+# 3. Run LLM generation, vector embeddings & MongoDB RAG benchmarks
+node benchmarks/hackbyte-ai-mentor/scripts/benchmark_llm_rag.mjs
+```
+
 ## 🙏 Acknowledgments
 
 - [Next.js](https://nextjs.org/)

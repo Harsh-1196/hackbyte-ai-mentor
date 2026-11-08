@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
-import { LeetCodeQuestion } from '../utils/csv-loader';
+import { LeetCodeQuestion } from '@/utils/csv-loader';
 
 // Extend the LeetCodeQuestion type to include the ino field
 interface IndexedLeetCodeQuestion extends LeetCodeQuestion {

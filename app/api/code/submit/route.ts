@@ -15,6 +15,8 @@ export async function POST(request: Request) {
     const encodedCode = Buffer.from(code).toString('base64');
     const encodedStdin = stdin ? Buffer.from(stdin).toString('base64') : null;
 
+    const judge0Key = process.env.NEXT_PUBLIC_JUDGE0_API_KEY || '';
+
     // First, create a submission
     let submissionResponse;
     try {
@@ -22,7 +24,7 @@ export async function POST(request: Request) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-RapidAPI-Key': process.env.NEXT_PUBLIC_JUDGE0_API_KEY,
+          'X-RapidAPI-Key': judge0Key,
           'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
         },
         body: JSON.stringify({
@@ -48,7 +50,7 @@ export async function POST(request: Request) {
       `https://judge0-ce.p.rapidapi.com/submissions/${token}?base64_encoded=true&fields=*`,
       {
         headers: {
-          'X-RapidAPI-Key': process.env.NEXT_PUBLIC_JUDGE0_API_KEY,
+          'X-RapidAPI-Key': judge0Key,
           'X-RapidAPI-Host': 'judge0-ce.p.rapidapi.com'
         },
       }
@@ -72,10 +74,10 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(result);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Code submission error:', error);
     return NextResponse.json(
-      { error: 'Submission failed', message: error.message },
+      { error: 'Submission failed', message: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }
